@@ -1,0 +1,190 @@
+//resolutions
+$laptop: 1366px;
+$tablets: 1024px;
+$min-tablets: 768px;
+$phones: 480px;
+//config
+@mixin laptop {
+    @media screen and (max-width: $laptop) {
+        @content;
+    }
+}
+@mixin tablets {
+    @media screen and (max-width: $tablets) {
+        @content;
+    }
+}
+@mixin min-tablets {
+    @media screen and (max-width: $min-tablets) {
+        @content;
+    }
+}
+@mixin phones {
+    @media screen and (max-width: $phones) {
+        @content;
+    }
+}
+body {
+    font-size: 16px;
+    color: #fff;
+}
+.intro {
+    &__title {
+        font-size: 82px;
+        @include tablets {
+            font-size: 50px;
+        }
+        @include min-tablets {
+            font-size: 40px;
+        }
+        @include phones {
+            font-size: 28px;
+        }
+    }
+    &__desc {
+        font-size: 21px;
+        @include phones {
+            font-size: 18px;
+        }
+    }
+}
+.section-title {
+    font-size: 40px;
+    @include laptop {
+        font-size: 28px;
+    }
+    @include tablets {
+        font-size: 30px;
+    }
+    @include min-tablets {
+        font-size: 24px;
+    }
+    @include phones {
+        font-size: 18px;
+    }
+}
+.menu {
+    &__link {
+        font-size: 20px;
+        @media screen and (max-width: 1730px) {
+            font-size: 16px;
+        }
+        @include tablets {
+            font-size: 14px;
+        }
+    }
+}
+.services {
+    &__link {
+        font-size: 30px;
+        @include laptop {
+            font-size: 22px;
+        }
+    }
+}
+.portfolio {
+    &__link {
+        font-size: 32px;
+        color: #fff;
+        @include laptop {
+            font-size: 20px;
+        }
+        @include tablets {
+            font-size: 16px;
+        }
+    }
+}
+.advantages {
+    h3 {
+        font-size: 30px;
+        @include laptop {
+            font-size: 20px;
+        }
+        @include phones {
+            font-size: 14px;
+        }
+    }
+    p {
+        font-size: 18px;
+        @include laptop {
+            font-size: 14px;
+        }
+        @include phones {
+            font-size: 12px;
+        }
+    }
+}
+.feedback {
+    p {
+        font-size: 22px;
+        @include min-tablets {
+            font-size: 18px;
+        }
+        @include phones {
+            font-size: 14px;
+        }
+    }
+}
+:-moz-placeholder {
+    color: #000;
+}
+:-ms-input-placeholder {
+    color: #000;
+}
+::-moz-placeholder {
+    color: #000;
+}
+::-webkit-input-placeholder {
+    color: #000;
+}
+:focus::-webkit-input-placeholder {
+    color: transparent
+}
+:focus::-moz-placeholder {
+    color: transparent
+}
+:focus:-moz-placeholder {
+    color: transparent
+}
+:focus:-ms-input-placeholder {
+    color: transparent
+}
+.footer {
+    &__link {
+        font-size: 14px;
+        @media screen and (max-width: 990px) {
+            font-size: 12px;
+        }
+        &.color {
+            color: #f6cb00;
+        }
+    }
+    &__copyright {
+        font-size: 14px;
+        color: #f6cb00;
+        @include phones {
+            color: #4d4d4d;
+            font-size: 12px;
+        }
+    }
+    &__block {
+        font-size: 14px;
+        @media screen and (max-width: 990px) {
+            font-size: 12px;
+        }
+    }
+    &__address {
+        @include phones {
+            font-size: 12px;
+        }
+    }
+    &__creator {
+        color: #4d4d4d;  
+        a {
+            color: #4d4d4d;
+            &:hover {
+                color: #fff;
+            }
+        }
+    }
+}
