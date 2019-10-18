@@ -276,6 +276,9 @@ img {
   height: 70%; }
   @media screen and (max-width: 1366px) {
     .services {
+      height: 65%; } }
+  @media screen and (max-width: 1200px) {
+    .services {
       height: 75%; } }
   @media screen and (max-width: 480px) {
     .services {
@@ -283,6 +286,9 @@ img {
   .services .lSSlideOuter {
     height: 55%; }
     @media screen and (max-width: 1366px) {
+      .services .lSSlideOuter {
+        height: 50%; } }
+    @media screen and (max-width: 1200px) {
       .services .lSSlideOuter {
         height: 50%; } }
     @media screen and (max-width: 480px) {

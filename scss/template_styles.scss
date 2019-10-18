@@ -351,6 +351,9 @@ img {
 .services {
     height: 70%;
     @include laptop {
+        height: 65%;
+    }
+    @include min-laptop {
         height: 75%;
     }
     @include phones {
@@ -359,6 +362,9 @@ img {
     .lSSlideOuter {
         height: 55%;
         @include laptop {
+            height: 50%;
+        }
+        @include min-laptop {
             height: 50%;
         }
         @include phones {

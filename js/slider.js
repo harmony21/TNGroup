@@ -63,14 +63,13 @@ $(document).ready(function() {
   //слайдер видео на главной
   var slider4 = $("#lightSlider4");
   slider4.lightSlider({
-    item: 1,
+    item: 3,
     speed: 600,
     responsive : [
       {
         breakpoint: 480,
         settings: {
           item: 1,
-          pager: true,
         }
       }
     ]
