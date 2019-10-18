@@ -1,4 +1,3 @@
-$(document).ready(function() {
   //слайдер в блоке достижений (для мобильной версии)
   var slider = $("#lightSlider");
   slider.lightSlider({
@@ -60,7 +59,9 @@ $(document).ready(function() {
     slider3.goToNextSlide();
   });
 
+
   //слайдер видео на главной
+$(document).ready(function() {
   var slider4 = $("#lightSlider4");
   slider4.lightSlider({
     item: 3,

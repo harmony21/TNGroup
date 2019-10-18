@@ -37,8 +37,7 @@ img {
   box-shadow: 3px 10px 30px 10px #000;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  height: 100%; }
+  justify-content: space-between; }
   @media screen and (max-width: 1200px) {
     .section {
       height: auto !important;
@@ -589,7 +588,8 @@ img {
         left: 60%; } }
 
 .advantages {
-  background-color: #000; }
+  background-color: #000;
+  flex-grow: 1; }
   .advantages__wrap {
     display: flex;
     align-items: flex-start;
@@ -658,7 +658,8 @@ img {
         text-align: left; } }
 
 .feedback {
-  background-color: #282828; }
+  background-color: #282828;
+  flex-grow: 1; }
   .feedback__form {
     margin-top: 40px; }
     @media screen and (max-width: 480px) {
@@ -743,7 +744,17 @@ input[type="submit"] {
 
 .awards {
   background-color: #282828;
-  position: relative; }
+  position: relative;
+  margin-top: 10%; }
+  @media screen and (max-width: 1366px) {
+    .awards {
+      margin-top: 0; } }
+  @media screen and (max-width: 1280px) {
+    .awards {
+      margin-top: 10%; } }
+  @media screen and (max-width: 1200px) {
+    .awards {
+      margin-top: 0; } }
   .awards__list {
     list-style: none;
     display: flex;
@@ -885,17 +896,14 @@ input[type="submit"] {
     margin-top: 10px; }
 
 .contacts__bottom {
-  margin-top: 10px;
-  margin-left: -20px; }
+  margin-top: 10px; }
   @media screen and (max-width: 768px) {
     .contacts__bottom {
-      font-size: 14px;
-      margin-left: -18px; } }
+      font-size: 14px; } }
   @media screen and (max-width: 480px) {
     .contacts__bottom {
       display: flex;
       flex-direction: column;
-      margin-left: 0;
       align-items: center; }
       .contacts__bottom span {
         display: none; } }
