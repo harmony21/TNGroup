@@ -745,7 +745,8 @@ input[type="submit"] {
 .awards {
   background-color: #282828;
   position: relative;
-  margin-top: 10%; }
+  margin-top: 10%;
+  flex-grow: 2; }
   @media screen and (max-width: 1366px) {
     .awards {
       margin-top: 0; } }
