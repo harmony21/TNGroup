@@ -760,7 +760,8 @@ input[type="submit"] {
     list-style: none;
     display: flex;
     justify-content: space-between;
-    padding: 0; }
+    padding: 0;
+    height: 100%; }
   .awards__item {
     width: calc(97%/5); }
     @media screen and (max-width: 480px) {

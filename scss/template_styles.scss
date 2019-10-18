@@ -906,6 +906,7 @@ input[type="submit"] {
         display: flex;
         justify-content: space-between;
         padding: 0;
+        height: 100%;
     }
     &__item {
         width: calc(97%/5);
