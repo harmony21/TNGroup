@@ -2,9 +2,21 @@ $(document).ready(function() {
   //слайдер в блоке достижений (для мобильной версии)
   var slider = $("#lightSlider");
   slider.lightSlider({
-    item: 3,
+    item: 5,
     speed: 600,
     responsive : [
+    {
+      breakpoint: 1200,
+      settings: {
+        item: 4
+      }
+    },
+    {
+      breakpoint: 768,
+      settings: {
+        item: 3 
+      }
+    },
     {
       breakpoint: 480,
       settings: {
@@ -13,12 +25,28 @@ $(document).ready(function() {
     }
   ]
   }); 
+  $('.arrow-left').click(function(e) {
+    slider.goToPrevSlide();
+  });
+  $('.arrow-right').click(function(e) {
+    slider.goToNextSlide();
+  });
 
   //слайдер в блоке о компании (для мобильной версии)
   var slider2 = $("#lightSlider2");
   slider2.lightSlider({
-    item: 1,
+    item: 3,
     speed: 600,
+    pager: false,
+    responsive : [
+      {
+        breakpoint: 480,
+        settings: {
+          item: 1,
+          pager: true,
+        }
+      }
+    ]
   }); 
 
    //слайдер видео на главной
@@ -37,5 +65,14 @@ $(document).ready(function() {
   slider4.lightSlider({
     item: 1,
     speed: 600,
+    responsive : [
+      {
+        breakpoint: 480,
+        settings: {
+          item: 1,
+          pager: true,
+        }
+      }
+    ]
   }); 
 });

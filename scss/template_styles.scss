@@ -16,12 +16,18 @@
 }
 //resolutions
 $laptop: 1366px;
+$min-laptop: 1200px;
 $tablets: 1024px;
 $min-tablets: 768px;
 $phones: 480px;
 //config
 @mixin laptop {
     @media screen and (max-width: $laptop) {
+        @content;
+    }
+}
+@mixin min-laptop {
+    @media screen and (max-width: $min-laptop) {
         @content;
     }
 }
@@ -60,6 +66,9 @@ a {
         height: 100%;
     }
 }
+img {
+    border: none;
+}
 .section {
     background-color: #282828;
     box-shadow: 3px 10px 30px 10px #000;
@@ -67,21 +76,21 @@ a {
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
-    @include laptop {
-        // height: 100% !important;
-        // display: block;
+    @include min-laptop {
+        height: auto !important;
+        display: block;
     }
 }
 .container {
-    padding: 70px 260px 70px 260px;
+    padding: 20px 260px 20px 260px;
     box-sizing: border-box;
     position: relative;
     height: 100%;
     @media screen and (max-width: 1600px) {
-        padding: 70px 140px 70px 140px;
+        padding: 20px 140px 20px 140px;
     }
     @include laptop {
-        padding: 25px 100px 25px 100px;
+        padding: 15px 60px 15px 60px;
     }
     @media screen and (max-width: 1200px) {
         padding: 25px 30px 25px 30px; 
@@ -92,13 +101,16 @@ a {
 }
 .video-back {
     position: relative;
-    @include phones {
+    @include min-laptop {
         display: none;
     }
     video {
         width: 100%;
         height: 100vh;
         object-fit: cover;
+        @include min-laptop {
+            height: 100%;
+        }
     }
 }
 .intro {
@@ -111,9 +123,10 @@ a {
     position: absolute;
     top: 0;
     width: 100%;
-    @include phones {
+    @include min-laptop {
         position: relative;
         background: url('images/back.jpg') center center no-repeat;
+        background-size: cover;
     }
     &__title {
         text-transform: uppercase;
@@ -247,13 +260,13 @@ a {
     }
 }
 .menu {
-    &__list {
+    ul {
         padding-left: 0;
         list-style: none;
         display: flex;
         margin: 0;
     }
-    &__item {
+    ul > li {
         margin-right: 40px;
         position: relative;
         display: flex;
@@ -283,7 +296,7 @@ a {
         }
         
     }
-    &__link {
+    ul > li > a {
         text-transform: uppercase;
     }
 }
@@ -329,15 +342,39 @@ a {
         display: block;
     }
 }
+.about {
+    height: 25%;
+    @include phones {
+        height: auto;
+    }
+}
 .services {
-    height: 100%;
+    height: 70%;
+    @include laptop {
+        height: 75%;
+    }
+    @include phones {
+        height: auto;
+    }
+    .lSSlideOuter {
+        height: 55%;
+        @include laptop {
+            height: 50%;
+        }
+        @include phones {
+            height: auto;
+        }
+    }
+    .lSSlideWrapper {
+        height: 100%;
+    }
     &__list {
         list-style: none;
         padding-left: 0;
         margin: 0;
         display: flex;
         align-items: center;
-        height: 30%;
+        height: 100% !important;
         justify-content: space-between;
     }
     &__item {
@@ -345,12 +382,9 @@ a {
         height: 100%;
         box-sizing: border-box;
         position: relative;
-        // @include laptop {
-        //     height: 280px;
-        // }
-        // @include tablets {
-        //     height: 280px;
-        // }
+        @include min-laptop {
+            height: 220px;
+        }
         &:after {
             content: "";
             width: 2px;
@@ -361,6 +395,10 @@ a {
             right: -4px;
             top: 50%;
             margin-top: -90px;
+            @include laptop {
+                height: 80px;
+                margin-top: -40px;
+            }
             @include tablets {
                 display: none;
             }
@@ -418,6 +456,9 @@ a {
             @include laptop {
                 margin-left: 0;
             }
+        }
+        @include min-laptop {
+            height: auto;
         }
         @include min-tablets {
             display: none;
@@ -503,6 +544,9 @@ a {
                 z-index: 2;
                 left: 0;
                 bottom: 0;
+                @include tablets {
+                    display: none;
+                }
             }
             &:after {
                 display: block;
@@ -515,6 +559,9 @@ a {
                 right: 0;
                 bottom: 0;
                 z-index: 2;
+                @include tablets {
+                    display: none;
+                }
             }
         }
         &:nth-child(2) {
@@ -529,6 +576,9 @@ a {
                 z-index: 2;
                 left: 0;
                 bottom: 0;
+                @include tablets {
+                    display: none;
+                }
             }
         }
         &:nth-child(3) {
@@ -543,6 +593,9 @@ a {
                 z-index: 2;
                 top: 0;
                 left: 0;
+                @include tablets {
+                    display: none;
+                }
             }
             &:after {
                 display: block;
@@ -555,6 +608,9 @@ a {
                 z-index: 2;
                 top: 0;
                 right: 0;
+                @include tablets {
+                    display: none;
+                }
             }
         }
         &:nth-child(4) {
@@ -569,6 +625,9 @@ a {
                 z-index: 2;
                 left: 0;
                 top: 0;
+                @include tablets {
+                    display: none;
+                }
             }
         }
     }
@@ -591,6 +650,7 @@ a {
         padding: 0 50px 25px 50px;
         box-sizing: border-box;
         top: 0;
+        z-index: 5;
     }
 }
 .video {
@@ -607,6 +667,9 @@ a {
         z-index: 2;
         right: 0;
         bottom: 0;
+        @include tablets {
+            display: none;
+        }
     }
     &__item {
         height: 100% !important;
@@ -619,9 +682,6 @@ a {
         display: flex;
         justify-content: center;
         align-items: center;
-        @include laptop {
-            // height: 300px;
-        }
         span {
             margin-left: 20px;
         }
@@ -822,6 +882,7 @@ input[type="submit"] {
 //Блок "Достижения" на главной
 .awards {
     background-color: #282828;
+    position: relative;
     &__list {
         list-style: none;
         display: flex;
@@ -838,6 +899,23 @@ input[type="submit"] {
             width: 100%;
             height: auto;
         }
+    }
+    .arrow-left, .arrow-right {
+        position: absolute;
+        top: 50%;
+        z-index: 5;
+        &:hover {
+            cursor: pointer;
+        }
+        @include tablets {
+            display: none;
+        }
+    }
+    .arrow-left {
+        left: 40px;
+    }
+    .arrow-right {
+        right: 40px;
     }
 }
 //переопределение pager у слайдера

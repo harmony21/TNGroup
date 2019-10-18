@@ -1,14 +1,8 @@
 var footerContacts = $('.footer').find('.contacts__bottom'),
     contactsAddress = $('.footer').find('.footer__address'),
-    allEvents = $('.portfolio__right').find('.btn'),
-    arrowDown = $('.intro__arrow'),
-    section = $('#header');
+    allEvents = $('.portfolio__right').find('.btn');
 
 $(document).ready(function() {
-    $('.intro__arrow').on('click', function() {
-        $('.wrapper').animate({scrollTop:$('#header').offset().top+"px"},{duration:1E3});
-      });
-
     //действия при скроллинге
     $('.wrapper').on("scroll", function () {
         var scrolled = $(this).scrollTop();
@@ -21,24 +15,6 @@ $(document).ready(function() {
             }
         }
     });
-
-
-    //перестройка в слайдер (блок достижения)
-    if ($(window).width() <= 768) {
-        $('.awards__list').attr('id', 'lightSlider');
-    }  
-    if ($(window).width() > 768) {
-        $('.awards__list').removeAttr('id');
-    }  
-
-    //перестройка в слайдер (блок о компании)
-    if ($(window).width() <= 480) {
-        $('.services__list').attr('id', 'lightSlider2');
-
-    }  
-    if ($(window).width() > 480) {
-        $('.services__list').removeAttr('id');
-    }  
 
     //перемещение блоков в футере
     if ($(window).width() <= 480) {
@@ -74,35 +50,3 @@ $(document).ready(function() {
         });
     }
 });
-
-
-
-
-$(window).resize(function() {
-    // //перестройка в слайдер (блок достижения)
-    // if ($(window).width() <= 768) {
-    //     $('.awards__list').attr('id', 'lightSlider');
-    // }  
-    // if ($(window).width() > 768) {
-    //     $('.awards__list').removeAttr('id');
-    // }  
-
-    // //перемещение блоков в футере
-    // if ($(window).width() <= 480) {
-    //     $('.contacts__block').after(footerContacts);
-    //     $('.socials').before(contactsAddress);
-    // }  
-
-    // if ($(window).width() > 740) {
-    //     $('#header').removeClass('fixed');
-    // }
-
-    // //перестройка в слайдер (блок портфолио)
-    // if ($(window).width() <= 480) {
-    //     $('.portfolio__list').attr('id', 'lightSlider4');
-
-    // }  
-    // if ($(window).width() > 480) {
-    //     $('.portfolio__list').removeAttr('id');
-    // }  
-})

@@ -24,7 +24,7 @@ body {
   font-size: 40px; }
   @media screen and (max-width: 1366px) {
     .section-title {
-      font-size: 28px; } }
+      font-size: 24px; } }
   @media screen and (max-width: 1024px) {
     .section-title {
       font-size: 30px; } }
@@ -35,20 +35,28 @@ body {
     .section-title {
       font-size: 18px; } }
 
-.menu__link {
+.menu ul > li > a {
   font-size: 20px; }
   @media screen and (max-width: 1730px) {
-    .menu__link {
+    .menu ul > li > a {
       font-size: 16px; } }
   @media screen and (max-width: 1024px) {
-    .menu__link {
+    .menu ul > li > a {
       font-size: 14px; } }
+
+@media screen and (max-width: 1366px) {
+  .about p {
+    font-size: 14px; } }
 
 .services__link {
   font-size: 30px; }
   @media screen and (max-width: 1366px) {
     .services__link {
       font-size: 22px; } }
+
+@media screen and (max-width: 1366px) {
+  .services p {
+    font-size: 14px; } }
 
 .portfolio__link {
   font-size: 32px;
