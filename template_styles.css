@@ -756,6 +756,10 @@ input[type="submit"] {
   @media screen and (max-width: 1200px) {
     .awards {
       margin-top: 0; } }
+  .awards .lSSlideOuter {
+    height: 100%; }
+  .awards .lSSlideWrapper {
+    height: 100%; }
   .awards__list {
     list-style: none;
     display: flex;

@@ -901,6 +901,12 @@ input[type="submit"] {
     @include min-laptop {
         margin-top: 0;
     }
+    .lSSlideOuter {
+        height: 100%;
+    }
+    .lSSlideWrapper {
+        height: 100%;
+    }
     &__list {
         list-style: none;
         display: flex;
