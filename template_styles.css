@@ -913,7 +913,7 @@ input[type="submit"] {
   display: flex;
   align-items: center;
   padding-left: 20px;
-  margin-left: 30px; }
+  margin-left: 20px; }
   @media screen and (max-width: 768px) {
     .socials {
       margin-left: 10px;
