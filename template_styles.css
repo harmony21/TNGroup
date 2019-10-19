@@ -415,6 +415,11 @@ img {
       .portfolio__wrap {
         margin-bottom: 20px;
         height: auto; } }
+    .portfolio__wrap noindex .lSSlideOuter .lSPager.lSpg {
+      display: none; }
+      @media screen and (max-width: 480px) {
+        .portfolio__wrap noindex .lSSlideOuter .lSPager.lSpg {
+          display: block; } }
   .portfolio__list {
     list-style: none;
     padding-left: 0;
@@ -424,6 +429,14 @@ img {
     margin: 0;
     height: 100%;
     justify-content: space-between; }
+    @media screen and (max-width: 480px) {
+      .portfolio__list {
+        display: none; } }
+    .portfolio__list.mobile-visible {
+      display: none; }
+      @media screen and (max-width: 480px) {
+        .portfolio__list.mobile-visible {
+          display: block; } }
   .portfolio__item {
     width: 50%;
     height: 50%;

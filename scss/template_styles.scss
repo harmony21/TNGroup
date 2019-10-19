@@ -513,6 +513,14 @@ img {
             margin-bottom: 20px;
             height: auto;
         }
+        noindex {
+            .lSSlideOuter .lSPager.lSpg {
+                display: none;
+                @include phones {
+                    display: block;
+                }
+            }
+        }
     }
     &__list {
         list-style: none;
@@ -523,6 +531,15 @@ img {
         margin: 0;
         height: 100%;
         justify-content: space-between;
+        @include phones {
+            display: none;
+        }
+        &.mobile-visible {
+            display: none;
+            @include phones {
+                display: block;
+            }
+        }
     }
     &__item {
         width: 50%;
