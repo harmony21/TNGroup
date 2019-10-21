@@ -6,6 +6,6 @@ $(document).ready(function() {
       updateURL: false,   
       loop: true,                     
       keyboard: true,                  
-      responsiveFallback: 1199,                                                                      
+      responsiveFallback: 1190,                                                                      
    });
 });
