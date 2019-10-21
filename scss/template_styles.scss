@@ -1162,3 +1162,75 @@ input[type="submit"] {
 .fancybox-slide {
     padding: 0;
 }
+
+//Контакты
+.cookies {
+    background-color: #f6cb00;
+    padding: 15px 260px;;
+    width: 100%;
+    box-sizing: border-box;
+    @media screen and (max-width: 1600px) {
+        padding: 15px 140px;
+    }
+    @include laptop {
+        padding: 15px 60px;
+    }
+    @media screen and (max-width: 1200px) {
+        padding: 15px 30px; 
+    }
+    @include phones {
+        padding: 15px;
+    }    
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        li {
+            margin-right: 25px;
+            &:last-child {
+                margin-right: 0;
+                a {
+                    text-decoration: underline;
+                }
+            }
+            a {
+                color: #000;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+.title {
+    background-color: #282828;
+}
+.content-zone {
+    background-color: #000;
+}
+.bank-details {
+    ul {
+        list-style: none;
+        margin-left: 60px;
+        padding: 0;
+    }
+    &__links {
+        margin-left: 60px;
+        display: flex;
+        align-items: center;
+        a {
+            display: flex;
+            align-items: center;
+            margin-right: 40px;
+            color: #f6cb00;
+            &:last-child {
+                margin-right: 0;
+            }
+            span {
+                margin-left: 15px;
+            }
+        }
+    }
+}

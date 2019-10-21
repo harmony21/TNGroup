@@ -966,3 +966,62 @@ input[type="submit"] {
 
 .fancybox-slide {
   padding: 0; }
+
+.cookies {
+  background-color: #f6cb00;
+  padding: 15px 260px;
+  width: 100%;
+  box-sizing: border-box; }
+  @media screen and (max-width: 1600px) {
+    .cookies {
+      padding: 15px 140px; } }
+  @media screen and (max-width: 1366px) {
+    .cookies {
+      padding: 15px 60px; } }
+  @media screen and (max-width: 1200px) {
+    .cookies {
+      padding: 15px 30px; } }
+  @media screen and (max-width: 480px) {
+    .cookies {
+      padding: 15px; } }
+  .cookies ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center; }
+    .cookies ul li {
+      margin-right: 25px; }
+      .cookies ul li:last-child {
+        margin-right: 0; }
+        .cookies ul li:last-child a {
+          text-decoration: underline; }
+      .cookies ul li a {
+        color: #000; }
+        .cookies ul li a:hover {
+          text-decoration: underline; }
+
+.title {
+  background-color: #282828; }
+
+.content-zone {
+  background-color: #000; }
+
+.bank-details ul {
+  list-style: none;
+  margin-left: 60px;
+  padding: 0; }
+
+.bank-details__links {
+  margin-left: 60px;
+  display: flex;
+  align-items: center; }
+  .bank-details__links a {
+    display: flex;
+    align-items: center;
+    margin-right: 40px;
+    color: #f6cb00; }
+    .bank-details__links a:last-child {
+      margin-right: 0; }
+    .bank-details__links a span {
+      margin-left: 15px; }
