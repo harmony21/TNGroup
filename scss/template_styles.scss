@@ -111,7 +111,7 @@ img {
             height: 100vh;
         }
         @media screen and (max-width: 1190px) {
-            height: 100vh;
+            height: 100%;
         }
     }
 }
@@ -217,9 +217,13 @@ img {
         }
         @include phones {
             width: 5px;
-            margin-right: 5px;
+            margin-right: 10px;
         }
     }
+}
+.section-subtitle {
+    font-size: 20px;
+    text-transform: uppercase;
 }
 #header {
     box-shadow: 3px 0px 30px 0px #000;
@@ -346,6 +350,9 @@ img {
 }
 .section-wrap {
     height: 100vh;
+    @media screen and (max-width: 1190px) {
+        height: auto;
+    }
 }
 .about {
     height: 25%;
@@ -459,6 +466,9 @@ img {
     display: flex;
     justify-content: space-between;
     height: 100vh;
+    @media screen and (max-width: 1190px) {
+        height: auto;
+    }
     &__left {
         height: 100%;
         width: 45%;
@@ -821,6 +831,7 @@ img {
 .feedback {
     background-color: #282828;
     flex-grow: 1;
+    box-shadow: 3px 10px 30px 10px #000;
     &__form {
         margin-top: 40px;
         @include phones {
@@ -1182,7 +1193,7 @@ input[type="submit"] {
         padding: 15px 30px; 
     }
     @include phones {
-        padding: 15px;
+        display: none;
     }    
     ul {
         list-style: none;
@@ -1212,17 +1223,106 @@ input[type="submit"] {
 }
 .content-zone {
     background-color: #000;
+    position: relative;
+    &--dark {
+        @include min-tablets {
+            background-color: #282828;
+        }   
+    }
+}
+.contact-info {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    @include phones {
+        flex-direction: column-reverse;
+    }
+    &__left {
+       width: 29%;
+       padding-left: 60px;
+       @include min-tablets {
+           padding-left: 0;
+       }
+       @include phones {
+           width: 100%;
+       }
+    }
+    &__right {
+        width: 69%;
+        @include phones {
+            display: none;
+        }
+        &.mobile-visible {
+            display: none;
+            @include phones {
+                display: block;
+                width: 100%;
+                padding: 15px;
+                box-sizing: border-box;
+                background-color: #282828;
+            }
+        }
+    }
+    a {
+        font-size: 20px;
+        @include phones {
+            span {
+                color: #f6cb00;
+            }
+        }
+    }
+    &__schedule {
+        margin-top: 20px;
+        display: flex;
+        align-items: flex-end;
+        margin-left: -60px;
+        @include min-tablets {
+            margin-left: 0;
+        }
+        @include phones {
+            align-items: center;
+        }
+        img {
+            margin-right: 25px;
+            @include min-tablets {
+                display: none;
+            }
+            @include phones {
+                display: block;
+            }
+        }
+    }
+    &__text {
+        display: flex;
+        flex-direction: column;
+        p {
+            margin: 5px 0;
+            &:first-child {
+                font-size: 18px;
+            }
+        }
+    }
 }
 .bank-details {
     ul {
         list-style: none;
         margin-left: 60px;
         padding: 0;
+        @include min-tablets {
+            margin-left: 0;
+        }
     }
     &__links {
         margin-left: 60px;
         display: flex;
         align-items: center;
+        @include min-tablets {
+            margin-left: 0;
+        }
+        @include phones {
+            flex-direction: column;
+            align-items: flex-start;
+        }
         a {
             display: flex;
             align-items: center;
@@ -1230,9 +1330,580 @@ input[type="submit"] {
             color: #f6cb00;
             &:last-child {
                 margin-right: 0;
+                @include phones {
+                    margin-top: 15px;
+                }
             }
             span {
                 margin-left: 15px;
+            }
+        }
+    }
+}
+
+//Страница "О компании"
+.about-info {
+    background-color: #282828;
+}
+.slider-about {
+    background-color: #282828;
+    padding: 0 153px;
+    position: relative;
+    z-index: 10;
+    @include min-laptop {
+        padding: 0 60px;
+    }
+    @include min-tablets {
+        padding: 0 30px;
+    }
+    @include phones {
+        padding: 0 15px;
+    }  
+    &--portfolio {
+        height: auto;
+        &:before {
+            content: "";
+            width: 100%;
+            height: 110px;
+            background-color: #000;
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+        }
+        ul, li {
+            height: 230px;
+        }
+    }
+}
+.slider-about-arrow {
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 35%;
+    z-index: 10;
+    &:hover {
+        background-color: #f6cb00;
+    }
+    &--prev {
+        left: 110px;
+        @include min-laptop {
+            left: 30px;
+        }
+        @include min-tablets {
+            display: none;
+        }
+    }
+    &--next {
+        right: 110px;
+        @include min-laptop {
+            right: 30px;
+        }
+        @include min-tablets {
+            display: none;
+        }
+    }
+}
+.mission {
+    background-color: #282828;
+}
+.guarantee {
+    background-color: #000;
+    &__list {
+        padding-left: 0;
+        li {
+            font-size: 16px;
+            margin-top: 30px;
+            list-style: none;
+            background: url('images/link.png') no-repeat left center;
+            padding: 5px 0 5px 40px;
+            display: flex;
+            align-items: center;
+            @include phones {
+                font-size: 12px;
+                margin-top: 10px;
+            }
+        }
+    }
+}
+.team {
+    background-color: #282828;
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        padding-left: 0;
+        justify-content: space-between;
+        @include min-tablets {
+            display: none;
+        }
+        &.mobile-visible {
+            display: none;
+            @include min-tablets {
+                display: block;
+            }
+        }
+    }
+    &__item {
+        width: calc(98%/6);
+        margin-top: 20px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 5px;
+        box-sizing: border-box;
+        @include tablets {
+            width: calc(98%/4);
+        }
+        @include min-tablets {
+            margin-top: 0;
+        }
+        h3 {
+            color: #f6cb00;
+            font-size: 16px;
+            text-transform: uppercase;
+        }
+        p {
+            margin: 0;
+        }
+    }
+    &__img {
+        width: 200px;
+        height: 200px;
+        overflow: hidden;
+        @include min-tablets {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+    }
+}
+//Страница "Отзывы"
+.reviews {
+    background-color: #282828;
+    ul {
+        list-style: none;
+        padding-left: 0;
+    }
+    li {
+        position: relative;
+        margin-bottom: 30px;
+        padding-bottom: 15px;
+        &:after {
+            content: "";
+            display: block;
+            position: absolute;
+            bottom: 0;
+            width: 160px;
+            height: 2px;
+            background-color: #f6cb00;
+        }
+        &:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            &:after {
+                display: none;
+            }
+        }
+    }
+    &__title {
+        display: flex;
+        align-items: center;
+        div {
+            @include min-tablets {
+                width: 60%;
+            }
+        }
+        h3 {
+            color: #f6cb00;
+            font-size: 18px;
+            text-transform: uppercase;
+            margin: 0 0 5px 0;
+            @include min-tablets {
+                font-size: 14px;
+            }
+        }
+        p {
+            text-transform: uppercase;
+            font-size: 14px;
+            margin: 0;
+            @include min-tablets {
+                font-size: 12px;
+            }
+        }
+    }
+    &__img {
+        margin-right: 37px;
+        width: 160px;
+        height: 160px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #000;
+        @include min-tablets {
+            height: 100px;
+            width: 100px !important;
+            margin-right: 15px;
+        }
+    }
+}
+//Страница "Услуги"
+.service-more {
+    background-color: #282828;
+    &__list {
+        list-style: none;
+        padding-left: 0;
+        display: flex;
+        justify-content: space-between;
+        margin: 0;
+        padding-bottom: 50px;
+        @include min-tablets {
+            flex-direction: column;
+        }
+    }
+    &__item {
+        width: calc(99%/3);
+        position: relative;
+        box-sizing: border-box;
+        @include min-tablets {
+            width: 70%;
+            margin: 0 auto;
+            margin-top: 20px;
+            &:first-child {
+                margin-top: 0;
+            }
+        }
+        @include phones {
+            width: 95%;
+        }
+        &:after {
+            content: "";
+            width: 2px;
+            height: 260px;
+            background-color: #f6cb00;
+            display: block;
+            position: absolute;
+            right: -5px;
+            top: 50%;
+            margin-top: -180px;
+            @include laptop {
+                height: 140px;
+                margin-top: -130px;
+            }
+            @include tablets {
+                display: none;
+            }
+            @include phones {
+                width: 130px;
+                height: 2px;
+                background-color: #f6cb00;
+                display: block;
+                position: relative;
+                margin-top: 0;
+                right: 0;
+            }
+        }
+        &:last-child {
+            &:after {
+                display: none;
+            }
+        }
+        h2 {
+            color: #f6cb00;
+            text-transform: uppercase;
+            text-align: center;
+            @include laptop {
+                font-size: 18px;
+            }
+            @include tablets {
+                font-size: 16px;
+            }
+            @include phones {
+                text-align: left;
+            }
+        }
+        p {
+            text-align: center;
+            font-size: 14px;
+            padding: 0 10px;
+            @include tablets {
+                font-size: 12px;
+            }
+            @include phones {
+                text-align: left;
+                padding: 0;
+            }
+        }
+    }
+    &__img {
+        width: 100%;
+        overflow: hidden;
+        height: 370px;
+        @include laptop {
+            height: auto;
+        }
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+//Страница "Услуги подробно"
+.service-intro {
+    background-color: #282828;
+    &__wrap {
+        display: flex;
+        align-items: flex-start;
+        @include min-tablets {
+            flex-direction: column;
+        }
+    }
+    &__left, &__right {
+        width: 50%;
+        @include min-tablets {
+            width: 100%;
+        }
+    }
+    &__img {
+        overflow: hidden;
+        img {
+            width: 100%;
+            height: 100%;
+            @include min-tablets {
+                height: auto;
+            }
+        }
+    }
+    &__desc {
+        height: 100%;
+        p {
+            margin: 0;
+            padding: 70px 260px 70px 80px;
+            @media screen and (max-width: 1600px) {
+                padding: 50px 140px 50px 50px;
+            }
+            @include laptop {
+                padding: 50px 60px;
+            }
+            @media screen and (max-width: 1200px) {
+                padding: 40px 30px 40px 30px; 
+            }
+            @include phones {
+                padding: 25px 15px 25px 15px;
+            }    
+            &:first-child {
+                background-color: #000;
+            }
+        }
+    }
+    &__details {
+        box-shadow: 3px 10px 30px 10px #000;
+    }
+    &__list {
+        list-style: none;
+        padding-left: 0;
+        display: flex;
+        justify-content: space-between;
+        margin: 50px 0;
+        @include phones {
+            margin: 10px 0;
+        }
+    }
+    &__item {
+        width: calc(70%/3);
+        position: relative;
+        @include min-tablets {
+            width: calc(100%/3);
+        }
+        @include phones {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        &:before {
+            content: "";
+            display: block;
+            width: 24px;
+            height: 21px;
+            background: url('images/link.png');
+            margin-bottom: 10px;
+        }
+    }
+}
+.specialization {
+    ul {
+        list-style: none;
+        padding-left: 0;
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    li {
+        width: calc(100%/4);
+        margin-bottom: 25px;
+        @include tablets {
+            width: 100%;
+            margin-bottom: 0;
+        }
+        p {
+            position: relative;
+            padding: 0 50px;
+            &:before {
+                content: "";
+                display: block;
+                width: 24px;
+                height: 21px;
+                background: url('images/link.png');
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+        }
+    }
+    &__img {
+        width: 100%;
+        overflow: hidden;
+        @include tablets {
+            display: none;
+        }
+    }
+}
+.services-inside {
+    background-color: #282828;
+    &__list {
+        display: flex;
+        justify-content: space-between;
+        list-style: none;
+        margin-top: 50px;
+        padding-left: 0;
+        @include phones {
+            flex-direction: column;
+            margin-top: 30px;
+        }
+    }
+    &__item {
+        width: 48%;
+        @include phones {
+            width: 100%;
+            &:after {
+                content: "";
+                display: block;
+                width: 200px;
+                height: 2px;
+                background-color: #f6cb00;
+                margin: 20px 0;
+            }
+            &:last-child {
+                &:after {
+                    display: none;
+                }
+            }
+        }
+        a {
+            color: #f6cb00;
+            text-transform: uppercase;
+            font-size: 22px;
+            &:hover {
+                color: #fff;
+            }
+        }
+        p {
+            font-size: 14px;
+        }
+    }
+}
+//Страница "Портфолио"
+.youtube-link {
+    text-align: center;
+    padding: 45px 0;
+    box-sizing: border-box;
+    background-color: #000;
+}
+.photos {
+    .portfolio__item {
+        width: 25%;
+        &:nth-child(1), &:nth-child(2), &:nth-child(3), &:nth-child(4) {
+            &:before, &:after {
+                display: none;
+            }
+        }
+        &:nth-child(1) {
+            &:after {
+                display: block;
+                content: '';
+                position: absolute;
+                border-right: 1px solid #f6cb00;
+                border-bottom: 1px solid #f6cb00;
+                width: 125px;
+                height: 125px;
+                z-index: 2;
+                right: 0;
+                bottom: 0;
+                @include tablets {
+                    display: none;
+                }
+            }
+        }
+        &:nth-child(2), &:nth-child(3) {
+            &:before {
+                display: block;
+                content: '';
+                position: absolute;
+                border-left: 1px solid #f6cb00;
+                border-bottom: 1px solid #f6cb00;
+                border-top: none;
+                width: 125px;
+                height: 125px;
+                z-index: 2;
+                left: 0;
+                bottom: 0;
+                top: auto;
+                @include tablets {
+                    display: none;
+                }
+            }
+            &:after {
+                display: block;
+                content: '';
+                position: absolute;
+                border-right: 1px solid #f6cb00;
+                border-bottom: 1px solid #f6cb00;
+                border-top: none;
+                width: 125px;
+                height: 125px;
+                z-index: 2;
+                bottom: 0;
+                top: auto;
+                right: 0;
+                @include tablets {
+                    display: none;
+                }
+            }
+        }
+        &:nth-child(4) {
+            &:before {
+                display: block;
+                content: '';
+                position: absolute;
+                border-left: 1px solid #f6cb00;
+                border-bottom: 1px solid #f6cb00;
+                border-top: none;
+                width: 125px;
+                height: 125px;
+                z-index: 2;
+                left: 0;
+                bottom: 0;
+                top: auto;
+                @include tablets {
+                    display: none;
+                }
             }
         }
     }
